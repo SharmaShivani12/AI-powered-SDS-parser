@@ -22,6 +22,7 @@ When a PDF is uploaded, the backend reads the text, sends it to a local AI model
   - Endpoint: `POST /api/upload/` accepts PDF uploads
   - Parses text using `PyMuPDF`, sends to local LLM
   - Saves structured data to the `SDSRecord` model
+  - SQLite DB the default provided by Django.
 
 - **AI Engine:** Local LLM (via Ollama API)
   - Receives prompt with raw PDF text
