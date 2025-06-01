@@ -17,7 +17,7 @@ This is a full-stack tool built to extract key information from Safety Data Shee
 
 ## How It Works
 
-When a PDF is uploaded, the backend reads the text, sends it to a local AI model (like LLaMA3) running via Ollama, and extracts useful fields in structured JSON. This data is then saved directly into the Django database and can be viewed or extended as needed.
+When a PDF is uploaded, the backend reads the text, sends it to a local AI model (like LLAMA) running via Ollama, and extracts useful fields in structured JSON. This data is then saved directly into the Django database and can be viewed or extended as needed.
 - **Backend:** Django + DRF  
   - Endpoint: `POST /api/upload/` accepts PDF uploads
   - Parses text using `PyMuPDF`, sends to local LLM
@@ -32,4 +32,4 @@ When a PDF is uploaded, the backend reads the text, sends it to a local AI model
   - Displays parsed SDS records
 
 While running the app you will need to start the three terminals one for LLM , one for Django (backend)
-and one for Vue(frontend)
+and one for Vue(frontend).
