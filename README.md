@@ -11,13 +11,25 @@ This is a full-stack tool built to extract key information from Safety Data Shee
 ## Tech Stack
 
 - **Backend:** Django + Django REST Framework
-- **Parsing:** Local PDF-to-text with `PyMuPDF`, then processed by a locally running language model
+- **Parsing:** Local PDF-to-text with `PyMuPDF`, then processed by a locally running language model (- Uses a local LLM (e.g., LLaMA3) for PDF understanding
+- Stores parsed data into a Django database)
 - **Frontend:** Vue.js app (`sds-frontend/`) for uploading files and displaying results
 
 ## How It Works
 
 When a PDF is uploaded, the backend reads the text, sends it to a local AI model (like LLaMA3) running via Ollama, and extracts useful fields in structured JSON. This data is then saved directly into the Django database and can be viewed or extended as needed.
+- **Backend:** Django + DRF  
+  - Endpoint: `POST /api/upload/` accepts PDF uploads
+  - Parses text using `PyMuPDF`, sends to local LLM
+  - Saves structured data to the `SDSRecord` model
 
----
+- **AI Engine:** Local LLM (via Ollama API)
+  - Receives prompt with raw PDF text
+  - Responds with JSON containing extracted fields
 
-This project helps streamline chemical data entry and improves accuracy when dealing with complex SDS documents.
+- **Frontend:** Vue.js (`sds-frontend/`)
+  - Handles PDF upload
+  - Displays parsed SDS records
+
+While running the app you will need to start the three terminals one for LLM , one for Django (backend)
+and one for Vue(frontend)
