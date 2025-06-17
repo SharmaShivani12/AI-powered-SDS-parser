@@ -34,7 +34,11 @@ When a PDF is uploaded, the backend reads the text, sends it to a local AI model
 
 While running the app you will need to start the three terminals one for LLM , one for Django (backend)
 and one for Vue(frontend).
+
+Django admin
 ![image](https://github.com/user-attachments/assets/5ef5c6c8-33d7-4265-a27a-b59974361d98)
+
+Vue 
 ![image](https://github.com/user-attachments/assets/61079c44-5f60-4577-a66a-7d04b8d86b63)
 
 
